@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* COLORS */
+  --black: 11 13 23;
+  --primary: 208 214 249;
+  --white: 255 255 255;
+
+  /* TYPOGRAPHY */
+  --font-size-h1: 9.375rem;
+  --font-size-h2: 6.25rem;
+  --font-size-h3: 3.5rem;
+  --font-size-h4: 2rem;
+
+  --font-size-h5: 1.75rem;
+  --letter-spacing-h5: 0.29rem;
+
+  --font-size-sub-h1: 1.75rem;
+
+  --font-size-sub-h2: 0.875rem;
+  --letter-spacing-sub-h2: 0.14rem;
+
+  --font-size-nav-text: 1rem;
+  --letter-spacing-nav-text: 0.16875rem;
+
+  --font-size-body: 1rem;
+}
