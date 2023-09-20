@@ -23,7 +23,7 @@ export type Menu = typeof menu
 
 export default function Navbar() {
   return (
-    <nav className="flex w-full pt-4 justify-between items-center ">
+    <nav className="flex w-full pt-4 justify-between items-center">
       <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48">
         <g fill="none" fillRule="evenodd">
           <circle cx="24" cy="24" r="24" fill="#FFF" />

@@ -6,6 +6,7 @@
   /* COLORS */
   --black: 11 13 23;
   --primary: 208 214 249;
+  --gray-light-1: 208 214 249;
   --white: 255 255 255;
 
   /* TYPOGRAPHY */
@@ -25,5 +26,19 @@
   --font-size-nav-text: 1rem;
   --letter-spacing-nav-text: 0.16875rem;
 
-  --font-size-body: 1rem;
+  --font-size-body: 1.125rem;
+}
+
+@layer components {
+  .withGradient::before {
+    background: linear-gradient(180deg, lightgray, transparent);
+    content: "";
+    height: 100%;
+    left: 0;
+    mix-blend-mode: color;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: -1;
+  }
 }

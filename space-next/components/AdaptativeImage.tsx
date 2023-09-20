@@ -56,7 +56,7 @@ export const AdaptiveImage = ({
 
   return (
     <>
-      <Head>
+      {/* <Head>
         <link
           {...commonPreload}
           media={desktopMedia}
@@ -75,7 +75,7 @@ export const AdaptiveImage = ({
           href={mobileImage.src}
           imageSrcSet={mobileSrcSet}
         />
-      </Head>
+      </Head> */}
       <picture className={className}>
         <source media={desktopMedia} srcSet={desktopSrcSet} />
         <source media={tabletMedia} srcSet={tabletSrcSet} />

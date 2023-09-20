@@ -9,7 +9,8 @@ const config: Config = {
   ],
   theme: {
     fontFamily: {
-      sans: ["var(--font-bellefair)", ...defaultTheme.fontFamily.sans],
+      bellefair: ["var(--font-bellefair)", ...defaultTheme.fontFamily.sans],
+      barlow: ["var(--font-barlow-condensed)", ...defaultTheme.fontFamily.sans],
     },
     colors: {
       transparent: "transparent",
@@ -17,6 +18,7 @@ const config: Config = {
       primary: "rgb(var(--primary)  / <alpha-value>)",
       white: "rgb(var(--white)  / <alpha-value>)",
       black: "rgb(var(--black)  / <alpha-value>)",
+      "gray-light-1": "rgb(var(--gray-light-1)  / <alpha-value>)",
     },
     fontSize: {
       h1: ["var(--font-size-h1)", "normal"],
