@@ -73,10 +73,10 @@ export const MobileMenu = ({ menu }: { menu: Menu }) => {
             leaveFrom="translate-x-0"
             leaveTo="translate-x-[100%]"
           >
-            <Dialog.Panel className="fixed bottom-0  right-0 bg-transparent backdrop-blur-lg  top-0 flex h-full w-64 flex-col px-4">
+            <Dialog.Panel className="fixed bottom-0  right-0 top-0 flex  h-full w-64 flex-col bg-transparent px-4 backdrop-blur-lg">
               <div className="p-4">
                 <button
-                  className="mb-4 flex h-11 w-11 items-center justify-center  ml-auto"
+                  className="mb-4 ml-auto flex h-11 w-11 items-center  justify-center"
                   onClick={closeMobileMenu}
                   aria-label="Close mobile menu"
                 >
@@ -88,7 +88,7 @@ export const MobileMenu = ({ menu }: { menu: Menu }) => {
                   </svg>
                 </button>
 
-                <ul className="flex flex-col pt-10 pl-4 gap-10 text-nav text-white uppercase">
+                <ul className="flex flex-col gap-10 pl-4 pt-10 text-nav uppercase text-white">
                   {menu.map((item, idx) => {
                     const isActive = pathname === item.path
 
@@ -96,9 +96,12 @@ export const MobileMenu = ({ menu }: { menu: Menu }) => {
                       <li key={item.label}>
                         <Link
                           href={item.path}
-                          className={clsx("flex items-center gap-1", {
-                            "border-b-2 pb-1 border-primary ": isActive,
-                          })}
+                          className={clsx(
+                            "flex items-center gap-1 border-b-2 border-transparent pb-2 hover:border-gray-light-1/50",
+                            {
+                              "border-white hover:border-white": isActive,
+                            }
+                          )}
                         >
                           {/* {I need to have always 2 numbers, like 00, 01} */}
                           <span className="font-bold">

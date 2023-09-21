@@ -1,4 +1,6 @@
 import { MobileMenu } from "@/components/nav/MobileMenu"
+import Link from "next/link"
+import DesktopMenu from "./DesktopMenu"
 
 const menu = [
   {
@@ -23,8 +25,8 @@ export type Menu = typeof menu
 
 export default function Navbar() {
   return (
-    <nav className="flex w-full pt-4 justify-between items-center">
-      <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48">
+    <nav className="flex h-24 w-full items-center justify-between lg:pt-4">
+      <svg className="shrink-0" xmlns="http://www.w3.org/2000/svg" width="48" height="48">
         <g fill="none" fillRule="evenodd">
           <circle cx="24" cy="24" r="24" fill="#FFF" />
           <path
@@ -33,16 +35,13 @@ export default function Navbar() {
           />
         </g>
       </svg>
-      <div className="block sm:hidden">
+      <div className="z-20 ml-auto hidden flex-1 translate-x-4 -scale-y-50  border border-gray-light-1  lg:block"></div>
+      <div className="block pr-4 sm:hidden">
         <MobileMenu menu={menu} />
       </div>
-      <ul className="hidden text-black sm:flex">
-        <li>
-          <a className="text-white z-50" href="/">
-            Home
-          </a>
-        </li>
-      </ul>
+      <div className="hidden h-full shrink-0 sm:block">
+        <DesktopMenu menu={menu} />
+      </div>
     </nav>
   )
 }

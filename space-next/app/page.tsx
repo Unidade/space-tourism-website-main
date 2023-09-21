@@ -5,33 +5,35 @@ import HeroTablet from "@/public/assets/home/background-home-tablet.jpg"
 
 export default function Home() {
   return (
-    <section className="mt-8 sm:mt-10">
+    <section className="mt-8 sm:mt-20">
       <AdaptiveImage
-        className="w-full h-full absolute inset-0 -z-50 bg-blend-screen withGradient"
+        className="withGradient absolute inset-0 -z-50 h-full w-full  bg-repeat"
         mobileImage={HeroMobile}
         tabletImage={HeroTablet}
         desktopImage={HeroDesktop}
       />
-      <div className="flex flex-col items-center max-w-xs sm:max-w-md mx-auto justify-between min-h-[80vh] max-h-[calc(100vh-62px)] text-center text-white pb-20">
+      <div className="mx-auto flex max-w-xs flex-col items-center justify-between text-center  text-white sm:max-w-md ">
         <div>
-          <p className="text-sub-h2 sm:text-[1.25rem] text-gray-light-1 uppercase">
+          <p className="text-sub-h2 uppercase text-gray-light-1 sm:text-[1.25rem]">
             So, you want to travel to
           </p>
-          <h1 className="text-[5rem] sm:text-h1 sm:mt-4 uppercase font-bellefair">
+          <h1 className="font-bellefair text-[5rem] uppercase sm:mt-4 sm:text-h1">
             Space
           </h1>
-          <p className="text-sub-h2 sm:text-body text-gray-light-1 leading-relaxed sm:mt-6">
+          <p className="text-sub-h2 leading-relaxed text-gray-light-1 sm:mt-4 sm:text-body">
             Let’s face it; if you want to go to space, you might as well genuinely go to
             outer space and not hover kind of on the edge of it. Well sit back, and relax
             because we’ll give you a truly out of this world experience!
           </p>
         </div>
-        <button
-          className="mt-20 bg-white w-[9.375rem] font-bellefair tracking-[0.07813rem] h-[9.375rem] text-[1.25rem] rounded-full text-black  uppercase"
-          type="button"
-        >
-          Explore
-        </button>
+        <div className="mt-10">
+          <button
+            className="hoverAnimated relative h-[9.375rem] w-[9.375rem] rounded-full bg-white py-1 font-bellefair text-[1.25rem] uppercase tracking-[0.07813rem] text-black  transition-all"
+            type="button"
+          >
+            Explore
+          </button>
+        </div>
       </div>
     </section>
   )

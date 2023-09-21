@@ -6,8 +6,9 @@
   /* COLORS */
   --black: 11 13 23;
   --primary: 208 214 249;
-  --gray-light-1: 208 214 249;
+  --gray-light-1: 200 200 200;
   --white: 255 255 255;
+  --hover-button: 36 38 47;
 
   /* TYPOGRAPHY */
   --font-size-h1: 9.375rem;
@@ -31,14 +32,39 @@
 
 @layer components {
   .withGradient::before {
-    background: linear-gradient(180deg, lightgray, transparent);
+    background: rgba(58, 58, 58, 0.25);
     content: "";
     height: 100%;
     left: 0;
-    mix-blend-mode: color;
+    mix-blend-mode: overlay;
     position: absolute;
     top: 0;
     width: 100%;
     z-index: -1;
+  }
+
+  .hoverAnimated::before {
+    color: transparent;
+    content: "";
+    height: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    z-index: -2;
+    transition: all 0.25s ease-in-out;
+    border-radius: 100%;
+  }
+
+  .hoverAnimated:hover::before {
+    background-color: #24262f;
+    transform: scale(1.35);
+  }
+
+  .desktopNavBarBackground {
+    backdrop-filter: blur(4px);
+    background: #161a247e;
   }
 }
