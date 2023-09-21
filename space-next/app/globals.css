@@ -24,7 +24,8 @@
   --font-size-sub-h2: 0.875rem;
   --letter-spacing-sub-h2: 0.14rem;
 
-  --font-size-nav-text: 1rem;
+  --font-size-nav-text-max: 2rem;
+  --font-size-nav-text-min: 0.813rem;
   --letter-spacing-nav-text: 0.16875rem;
 
   --font-size-body: 1.125rem;

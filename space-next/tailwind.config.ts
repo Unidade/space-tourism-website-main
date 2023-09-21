@@ -41,7 +41,7 @@ const config: Config = {
         },
       ],
       nav: [
-        "clamp(0.813rem, 0.746rem + 0.211vw, 1rem)",
+        "clamp(var(--font-size-nav-text-min), 0.746rem + 0.211vw, var(--font-size-nav-text-max))",
         {
           letterSpacing: "var(--letter-spacing-nav-text)",
           lineHeight: "normal",
