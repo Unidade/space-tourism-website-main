@@ -4,14 +4,10 @@ import DestinationMobile from "@/public/assets/destination/background-destinatio
 import DestinationDesktop from "@/public/assets/destination/background-destination-desktop.jpg"
 
 import dataJson from "@/public/data.json"
-import DestinationDetails from "./destination"
-import { Suspense } from "react"
+import DestinationDetails from "./DestinationDetails"
+import { Header } from "@/components/Header"
 
-export default function DestinationPage({
-  searchParams,
-}: {
-  searchParams: { [key: string]: string | string[] | undefined }
-}) {
+export default function DestinationPage() {
   return (
     <section className="pb-14">
       <AdaptiveImage
@@ -21,17 +17,9 @@ export default function DestinationPage({
         desktopImage={DestinationDesktop}
       />
       <div className="mt-10 flex flex-col items-center px-10">
-        <p className="flex items-center gap-3 uppercase tracking-widest">
-          <span className="inline-block text-gray-light-1">01</span>pick your destination
-        </p>
-        <Suspense fallback={<Loading />}>
-          <DestinationDetails data={dataJson.destinations} />
-        </Suspense>
+        <Header number="01" title="pick your destination" />
+        <DestinationDetails data={dataJson.destinations} />
       </div>
     </section>
   )
-}
-
-function Loading() {
-  return null
 }
