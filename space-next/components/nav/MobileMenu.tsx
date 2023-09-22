@@ -4,7 +4,7 @@ import { Fragment, useEffect, useState } from "react"
 import { usePathname, useSearchParams } from "next/navigation"
 import { Transition, Dialog } from "@headlessui/react"
 import Link from "next/link"
-import { Menu } from "./Navbar"
+import { Menu } from "./Header"
 import clsx from "clsx"
 
 export const MobileMenu = ({ menu }: { menu: Menu }) => {

@@ -3,7 +3,7 @@ import type { Metadata } from "next"
 import { Bellefair, Barlow_Condensed } from "next/font/google"
 
 import clsx from "clsx"
-import Navbar from "@/components/nav/Navbar"
+import Header from "@/components/nav/Header"
 
 const bellefair = Bellefair({
   weight: "400",
@@ -29,10 +29,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         className={clsx([
           bellefair.variable,
           barlowCondensed.variable,
-          "min-w-screen relative min-h-screen pl-6 font-barlow text-white",
+          "min-w-screen relative z-10 min-h-screen bg-black pl-6 font-barlow text-white",
         ])}
       >
-        <Navbar />
+        <Header />
         <main>{children}</main>
       </body>
     </html>

@@ -1,6 +1,6 @@
 "use client"
 import Link from "next/link"
-import { Menu } from "./Navbar"
+import { Menu } from "./Header"
 import { usePathname } from "next/navigation"
 import clsx from "clsx"
 
