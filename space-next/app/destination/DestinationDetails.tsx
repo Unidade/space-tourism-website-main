@@ -1,30 +1,36 @@
 "use client"
 
-import { useLocalStorage } from "@/utils/window-storage"
+import Cookies from "js-cookie"
 import clsx from "clsx"
 import Image from "next/image"
 import { DestinationDetailItem } from "@/components/destination/DestinationDetailItem"
+import { useState } from "react"
 
-export default function DestinationDetails({ data }: { data: Destination[] }) {
-  const [currentDestination, setCurrentDestination] = useLocalStorage({
-    key: "destination",
-    defaultValue: data[0].name.toLowerCase(),
-  })
+export default function DestinationDetails({
+  data,
+  destination: cookieSavedDestination,
+}: DestinationDetailsProps) {
+  const [selectedDestination, setSelectedDestination] = useState(cookieSavedDestination)
 
   const destinationData = data.find(
-    (destinationData) => destinationData.name.toLowerCase() === currentDestination
+    (destinationData) => destinationData.name.toLowerCase() === selectedDestination
   )
 
   if (!destinationData) {
-    throw new Error("Destination not found")
+    throw new Error(`Destination ${selectedDestination} not found`)
   }
 
   const handleDestinationChange = (destinationName: string) => {
-    setCurrentDestination(destinationName)
+    if (destinationName === selectedDestination) {
+      return
+    }
+
+    Cookies.set("destination", destinationName)
+    setSelectedDestination(destinationName)
   }
 
   const renderDestinationButtons = data.map((destination) => {
-    const isActive = destination.name.toLowerCase() === currentDestination
+    const isActive = destination.name.toLowerCase() === selectedDestination
     return (
       <button
         type="button"
@@ -50,7 +56,7 @@ export default function DestinationDetails({ data }: { data: Destination[] }) {
         alt={destinationData.name}
         width={475}
         height={475}
-        quality={100}
+        quality={75}
         priority={true}
       />
       <ul className="mt-8 flex gap-4 uppercase  tracking-widest">
@@ -67,6 +73,11 @@ export default function DestinationDetails({ data }: { data: Destination[] }) {
       </div>
     </>
   )
+}
+
+type DestinationDetailsProps = {
+  destination: string
+  data: Destination[]
 }
 
 type Destination = {

@@ -36,7 +36,7 @@ export default function Header() {
         </g>
       </svg>
       <div className="z-20 ml-auto hidden flex-1 translate-x-4 -scale-y-50  border border-gray-light-1  lg:block"></div>
-      <nav className="h-full">
+      <nav className="flex h-full flex-col justify-center">
         <div className="block pr-4 sm:hidden">
           <MobileMenu menu={menu} />
         </div>

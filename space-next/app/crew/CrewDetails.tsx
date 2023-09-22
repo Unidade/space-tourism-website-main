@@ -31,7 +31,7 @@ export default function CrewDetails({ data }: { data: Crew[] }) {
           isActive && "bg-white"
         )}
         aria-label={crew.name.toLowerCase()}
-      ></button>
+      />
     )
   })
 

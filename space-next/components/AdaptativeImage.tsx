@@ -18,7 +18,7 @@ export const AdaptiveImage = ({
   alt = "Hero Image",
   tabletImage,
   desktopImage,
-  quality = 100,
+  quality = 75,
   mobileImage,
   className,
   style = {

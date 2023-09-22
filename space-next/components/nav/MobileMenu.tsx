@@ -97,7 +97,7 @@ export const MobileMenu = ({ menu }: { menu: Menu }) => {
                         <Link
                           href={item.path}
                           className={clsx(
-                            "flex items-center gap-1 border-b-2 border-transparent pb-2 hover:border-gray-light-1/50",
+                            "flex items-center gap-2 border-b-2 border-transparent pb-2 hover:border-gray-light-1/50",
                             {
                               "border-white hover:border-white": isActive,
                             }

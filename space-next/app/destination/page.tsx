@@ -3,11 +3,14 @@ import DestinationTablet from "@/public/assets/destination/background-destinatio
 import DestinationMobile from "@/public/assets/destination/background-destination-mobile.jpg"
 import DestinationDesktop from "@/public/assets/destination/background-destination-desktop.jpg"
 
+import { cookies } from "next/headers"
 import dataJson from "@/public/data.json"
 import DestinationDetails from "./DestinationDetails"
 import { NumberWithText } from "@/components/NumberWithText"
 
 export default function DestinationPage() {
+  const destination = cookies().get("destination")?.value || "moon"
+
   return (
     <section className="pb-14">
       <AdaptiveImage
@@ -18,7 +21,7 @@ export default function DestinationPage() {
       />
       <div className="flex flex-col items-center px-10">
         <NumberWithText number="01" title="pick your destination" />
-        <DestinationDetails data={dataJson.destinations} />
+        <DestinationDetails data={dataJson.destinations} destination={destination} />
       </div>
     </section>
   )
