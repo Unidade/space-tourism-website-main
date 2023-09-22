@@ -5,7 +5,7 @@ import HeroTablet from "@/public/assets/home/background-home-tablet.jpg"
 
 export default function Home() {
   return (
-    <section className="mt-8 sm:mt-20">
+    <section className="mt-8 pb-10 sm:mt-20">
       <AdaptiveImage
         className="withGradient absolute inset-0 -z-50 h-full w-full  bg-repeat"
         mobileImage={HeroMobile}

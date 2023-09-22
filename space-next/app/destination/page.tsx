@@ -16,7 +16,7 @@ export default function DestinationPage() {
         tabletImage={DestinationTablet}
         desktopImage={DestinationDesktop}
       />
-      <div className="mt-10 flex flex-col items-center px-10">
+      <div className="flex flex-col items-center px-10">
         <Header number="01" title="pick your destination" />
         <DestinationDetails data={dataJson.destinations} />
       </div>

@@ -24,12 +24,12 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className="text-[12px] xl:text-[14px]">
+    <html lang="en" className="text-[14px] xl:text-[16px]">
       <body
         className={clsx([
           bellefair.variable,
           barlowCondensed.variable,
-          "min-w-screen relative min-h-screen  pl-6 font-barlow text-white",
+          "min-w-screen relative min-h-screen pl-6 font-barlow text-white",
         ])}
       >
         <Navbar />
