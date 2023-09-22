@@ -21,7 +21,7 @@ export default function DesktopMenu({ menu }: { menu: Menu }) {
             )}
           >
             <Link className="z-10 flex h-full  items-center gap-2 uppercase" href={path}>
-              <span className="hidden font-bold  lg:block">
+              <span className="hidden  font-medium  lg:block">
                 {idx.toString().padStart(2, "0")}
               </span>
               {label}

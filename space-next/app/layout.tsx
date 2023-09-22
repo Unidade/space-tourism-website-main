@@ -12,7 +12,7 @@ const bellefair = Bellefair({
 })
 
 const barlowCondensed = Barlow_Condensed({
-  weight: "400",
+  weight: ["300", "400", "500", "700"],
   subsets: ["latin"],
   variable: "--font-barlow-condensed",
 })
@@ -29,7 +29,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         className={clsx([
           bellefair.variable,
           barlowCondensed.variable,
-          "min-w-screen relative min-h-screen overflow-hidden pl-6 font-barlow",
+          "min-w-screen relative min-h-screen  pl-6 font-barlow text-white",
         ])}
       >
         <Navbar />
