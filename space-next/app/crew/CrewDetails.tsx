@@ -39,7 +39,7 @@ export default function CrewDetails({ data }: { data: Crew[] }) {
     <>
       <div className="shrink-5 mt-12">
         <Image
-          className="h-48 w-auto "
+          className="h-48 w-auto"
           src={crewData.images.webp}
           alt={crewData.name}
           width={475}

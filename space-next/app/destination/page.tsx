@@ -7,6 +7,7 @@ import { cookies } from "next/headers"
 import dataJson from "@/public/data.json"
 import DestinationDetails from "./DestinationDetails"
 import { NumberWithText } from "@/components/NumberWithText"
+import { motion } from "framer-motion"
 
 export default function DestinationPage() {
   const destination = cookies().get("destination")?.value || "moon"

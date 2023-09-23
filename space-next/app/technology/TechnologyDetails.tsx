@@ -23,7 +23,7 @@ export default function TechnologyDetails({ data }: { data: Technology[] }) {
         key={technology.name}
         className={clsx(
           "h-10 w-10 select-none rounded-full bg-transparent text-gray-light-1 outline outline-1 transition-colors duration-200 ease-out",
-          isActive && "bg-white text-[#0f0f0f]"
+          isActive && "bg-white text-[#0e0e0e]"
         )}
         aria-label={technology.name.toLowerCase()}
       >
@@ -34,8 +34,9 @@ export default function TechnologyDetails({ data }: { data: Technology[] }) {
 
   return (
     <>
-      <div className="mt-12">
+      <div className="full-width">
         <Image
+          className="mt-12 h-auto object-fill"
           src={technologyData.images.landscape}
           alt={technologyData.name}
           width={475}
