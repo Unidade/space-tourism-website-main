@@ -20,9 +20,14 @@ export default function DestinationPage() {
         tabletImage={DestinationTablet}
         desktopImage={DestinationDesktop}
       />
-      <div className="flex flex-col items-center px-10">
-        <NumberWithText number="01" title="pick your destination" />
-        <DestinationDetails data={dataJson.destinations} destination={destination} />
+      <div className="lg: flex flex-col items-center px-10 lg:mx-auto lg:w-11/12 lg:pl-20">
+        <div className="lg:self-start">
+          <NumberWithText number="01" title="pick your destination" />
+        </div>
+
+        <div className="hidden lg:flex lg:gap-20">
+          <DestinationDetails data={dataJson.destinations} destination={destination} />
+        </div>
       </div>
     </section>
   )

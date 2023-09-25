@@ -74,23 +74,30 @@ export default function DestinationDetails({
             />
           </motion.div>
         </div>
+      </AnimatePresence>
+      <div className="self-start text-start">
         <ul className="mt-8 flex gap-4 uppercase  tracking-widest">
           {DestinationButton}
         </ul>
-      </AnimatePresence>
 
-      <div className="max-w-md text-center">
-        <h1 className="mt-8 font-bellefair text-h3 uppercase">{destinationData.name}</h1>
-        <p className=" text-balance text-center leading-6 tracking-wider">
-          {destinationData.description}
-        </p>
-        <div className="mt-8 w-full scale-y-[10%] border border-gray-light-1/20" />
-        <div className="flex flex-col gap-2">
-          <DestinationDetailItem label="avg.distance" value={destinationData.distance} />
-          <DestinationDetailItem
-            label="est. travel time"
-            value={destinationData.travel}
-          />
+        <div className="max-w-md ">
+          <h1 className="mt-8 font-bellefair text-h3 uppercase">
+            {destinationData.name}
+          </h1>
+          <p className=" text-balance text-center leading-6 tracking-wider">
+            {destinationData.description}
+          </p>
+          <div className="mt-8 w-full scale-y-[10%] border border-gray-light-1/20" />
+          <div className="flex flex-col gap-2 lg:flex-row lg:justify-between">
+            <DestinationDetailItem
+              label="avg.distance"
+              value={destinationData.distance}
+            />
+            <DestinationDetailItem
+              label="est. travel time"
+              value={destinationData.travel}
+            />
+          </div>
         </div>
       </div>
     </>

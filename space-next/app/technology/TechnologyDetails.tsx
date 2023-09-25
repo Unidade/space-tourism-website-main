@@ -34,7 +34,7 @@ export default function TechnologyDetails({ data }: { data: Technology[] }) {
         alt={technologyData.name}
       />
 
-      <div className="flex w-full max-w-lg flex-col items-center px-4 pl-6 text-center lg:max-w-2xl lg:flex-row lg:items-start lg:justify-start lg:gap-8">
+      <div className="flex w-full max-w-lg flex-col items-center px-4 pl-6 text-center lg:max-w-2xl lg:flex-row lg:items-start lg:justify-start lg:gap-8 lg:p-0">
         <ul className="mt-6 flex gap-4 uppercase tracking-widest lg:mt-0 lg:flex-col lg:gap-8">
           {data.map((technology, idx) => {
             const name = technology.name.toLowerCase()
@@ -57,7 +57,7 @@ export default function TechnologyDetails({ data }: { data: Technology[] }) {
           <h1 className=" lg:space  font-bellefair text-h4 uppercase lg:text-h3">
             {technologyData.name}
           </h1>
-          <p className=" mt-8 text-center leading-6 tracking-widest text-gray-light-1 lg:pr-12 lg:text-start lg:text-[1.25rem] lg:leading-8 lg:[text-wrap:balance]">
+          <p className=" mt-8 text-center leading-6 tracking-widest text-gray-light-1 lg:pr-12 lg:text-start  lg:[text-wrap:balance]">
             {technologyData.description}
           </p>
         </div>

@@ -37,9 +37,9 @@ export default function CrewDetails({ data }: { data: Crew[] }) {
 
   return (
     <>
-      <div className="shrink-5 mt-12 text-center md:order-2 lg:order-none lg:row-span-2 lg:mt-0 lg:h-full lg:self-end">
+      <div className="shrink-5 mt-12 text-center md:order-2 lg:order-none lg:row-span-2 lg:mt-0 lg:h-full lg:self-end lg:self-end">
         <Image
-          className="h-48 w-auto md:h-80 lg:h-full 2xl:max-h-[780px]"
+          className="h-48 w-auto md:h-80 lg:h-full lg:max-h-[640px]"
           src={crewData.images.webp}
           alt={crewData.name}
           width={433}
