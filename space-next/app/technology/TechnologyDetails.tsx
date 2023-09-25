@@ -13,52 +13,82 @@ export default function TechnologyDetails({ data }: { data: Technology[] }) {
     setSelectedTechnologyIdx(technologyIdx)
   }
 
-  const renderTechnologyButtons = data.map((technology, idx) => {
-    const isActive = idx === selectedTechnologyIdx
-
-    return (
-      <button
-        type="button"
-        onClick={() => handleCrewChange(idx)}
-        key={technology.name}
-        className={clsx(
-          "h-10 w-10 select-none rounded-full bg-transparent text-gray-light-1 outline outline-1 transition-colors duration-200 ease-out",
-          isActive && "bg-white text-[#0e0e0e]"
-        )}
-        aria-label={technology.name.toLowerCase()}
-      >
-        {String(idx + 1)}
-      </button>
-    )
-  })
-
   return (
     <>
-      <div className="full-width">
-        <Image
-          className="mt-12 h-auto object-fill"
-          src={technologyData.images.landscape}
-          alt={technologyData.name}
-          width={475}
-          height={475}
-          quality={75}
-          priority={true}
-        />
+      <Image
+        className="mt-12 w-full lg:hidden"
+        src={technologyData.images.landscape}
+        alt={technologyData.name}
+        width={768}
+        height={310}
+        quality={75}
+        priority={true}
+      />
+      <Image
+        className="hidden lg:block"
+        src={technologyData.images.portrait}
+        width={515}
+        height={527}
+        quality={75}
+        priority={true}
+        alt={technologyData.name}
+      />
+
+      <div className="flex w-full max-w-lg flex-col items-center px-4 pl-6 text-center lg:max-w-2xl lg:flex-row lg:items-start lg:justify-start lg:gap-8">
+        <ul className="mt-6 flex gap-4 uppercase tracking-widest lg:mt-0 lg:flex-col lg:gap-8">
+          {data.map((technology, idx) => {
+            const name = technology.name.toLowerCase()
+            const isActive = idx === selectedTechnologyIdx
+            return (
+              <li key={name}>
+                <TechnologyButton
+                  label={String(idx + 1)}
+                  isActive={isActive}
+                  onClick={() => handleCrewChange(idx)}
+                />
+              </li>
+            )
+          })}
+        </ul>
+        <div className="mt-8 text-center lg:mt-0 lg:text-start">
+          <span className="font-bellefair uppercase text-gray-light-1/50">
+            the terminology...
+          </span>
+          <h1 className=" lg:space  font-bellefair text-h4 uppercase lg:text-h3">
+            {technologyData.name}
+          </h1>
+          <p className=" mt-8 text-center leading-6 tracking-widest text-gray-light-1 lg:pr-12 lg:text-start lg:text-[1.25rem] lg:leading-8 lg:[text-wrap:balance]">
+            {technologyData.description}
+          </p>
+        </div>
       </div>
-      <ul className="mt-4 flex gap-4 uppercase  tracking-widest">
-        {renderTechnologyButtons}
-      </ul>
-      <span className="mt-8 font-bellefair uppercase text-gray-light-1/50">
-        the terminology...
-      </span>
-      <h1 className=" font-bellefair text-h4 uppercase">{technologyData.name}</h1>
-      <p className="mt-8 text-center leading-6 tracking-widest text-gray-light-1">
-        {technologyData.description}
-      </p>
     </>
   )
 }
 
+const TechnologyButton = ({
+  label,
+  isActive,
+  onClick,
+}: {
+  label: string
+  isActive: boolean
+  onClick: () => void
+}) => {
+  return (
+    <button
+      type="button"
+      onClick={typeof onClick === "function" ? onClick : () => {}}
+      className={clsx(
+        "h-10 w-10 select-none  rounded-full bg-transparent text-gray-light-1 outline outline-1 transition-colors duration-200 ease-out lg:h-16 lg:w-16 lg:text-h5",
+        isActive && "bg-white text-[#000]"
+      )}
+      aria-label={label.toLowerCase()}
+    >
+      {label}
+    </button>
+  )
+}
 interface Technology {
   name: string
   images: {

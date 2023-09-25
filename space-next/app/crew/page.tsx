@@ -10,15 +10,18 @@ import CrewDetails from "./CrewDetails"
 
 export default function CrewPage() {
   return (
-    <section>
+    <section className="pl-6">
       <AdaptiveImage
         className="withGradient absolute inset-0 -z-50 h-full w-full"
         mobileImage={CrewImageMobile}
         tabletImage={CrewImageTablet}
         desktopImage={CrewImageDesktop}
       />
-      <div className="flex  flex-col items-center  px-4 text-center">
-        <NumberWithText number="02" title="meet your crew" />
+      <div className="flex flex-col items-center justify-center text-center lg:container  lg:mx-auto lg:mt-8 lg:grid lg:min-h-[44rem]  lg:max-w-max  lg:grid-cols-2 lg:items-start lg:gap-x-20">
+        <div className="md:self-start">
+          <NumberWithText number="02" title="meet your crew" />
+        </div>
+
         <CrewDetails data={dataJson.crew} />
       </div>
     </section>

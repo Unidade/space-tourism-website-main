@@ -37,26 +37,30 @@ export default function CrewDetails({ data }: { data: Crew[] }) {
 
   return (
     <>
-      <div className="shrink-5 mt-12">
+      <div className="shrink-5 mt-12 text-center md:order-2 lg:order-none lg:row-span-2 lg:mt-0 lg:h-full lg:self-end">
         <Image
-          className="h-48 w-auto"
+          className="h-48 w-auto md:h-80 lg:h-full 2xl:max-h-[780px]"
           src={crewData.images.webp}
           alt={crewData.name}
-          width={475}
-          height={475}
+          width={433}
+          height={640}
           quality={75}
           priority={true}
         />
       </div>
-      <div className="h-1 w-full -scale-y-[25%] bg-gray-light-1/25" />
-      <ul className="mt-4 flex gap-4 uppercase  tracking-widest">{renderCrewButtons}</ul>
-      <span className="mt-8 font-bellefair uppercase text-gray-light-1/50">
-        {crewData.role}
-      </span>
-      <h1 className=" font-bellefair text-h4 uppercase">{crewData.name}</h1>
-      <p className="mt-8 text-center leading-6 tracking-widest text-gray-light-1">
-        {crewData.bio}
-      </p>
+      <div className="flex flex-col items-center lg:items-start lg:text-start ">
+        <div className="h-1 w-full -scale-y-[25%] bg-gray-light-1/25 md:hidden" />
+        <ul className="mt-4 flex gap-4 uppercase tracking-widest md:order-1 lg:mt-8 lg:pb-8 ">
+          {renderCrewButtons}
+        </ul>
+        <span className="mt-8  font-bellefair uppercase text-gray-light-1/50 lg:mt-0">
+          {crewData.role}
+        </span>
+        <h1 className="font-bellefair text-h4 uppercase">{crewData.name}</h1>
+        <p className="mt-8 leading-6 tracking-widest text-gray-light-1 [text-wrap:balance]  md:max-w-[90ch] lg:max-w-[55ch]">
+          {crewData.bio}
+        </p>
+      </div>
     </>
   )
 }

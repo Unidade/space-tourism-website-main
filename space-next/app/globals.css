@@ -70,11 +70,8 @@
   }
 
   .full-width {
-    width: 100vw;
-    position: relative;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
+    /* remove the padding left of the layout body tag */
+    width: calc(100vw);
+    margin-left: -1.5rem;
   }
 }

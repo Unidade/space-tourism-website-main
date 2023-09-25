@@ -67,8 +67,8 @@ export default function DestinationDetails({
               className="mt-6"
               src={destinationData.images.webp}
               alt={destinationData.name}
-              width={475}
-              height={475}
+              width={445}
+              height={445}
               quality={75}
               priority={true}
             />
@@ -78,34 +78,21 @@ export default function DestinationDetails({
           {DestinationButton}
         </ul>
       </AnimatePresence>
-      <AnimatePresence mode="sync">
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.25 }}
-          key={selectedDestination ? selectedDestination : "empty"}
-          className="text-center"
-        >
-          <h1 className="mt-8 font-bellefair text-h3 uppercase">
-            {destinationData.name}
-          </h1>
-          <p className="text-center leading-6 tracking-wider">
-            {destinationData.description}
-          </p>
-          <div className="mt-8 w-full scale-y-[10%] border border-gray-light-1/20" />
-          <div className="flex flex-col gap-2">
-            <DestinationDetailItem
-              label="avg.distance"
-              value={destinationData.distance}
-            />
-            <DestinationDetailItem
-              label="est. travel time"
-              value={destinationData.travel}
-            />
-          </div>
-        </motion.div>
-      </AnimatePresence>
+
+      <div className="max-w-md text-center">
+        <h1 className="mt-8 font-bellefair text-h3 uppercase">{destinationData.name}</h1>
+        <p className=" text-balance text-center leading-6 tracking-wider">
+          {destinationData.description}
+        </p>
+        <div className="mt-8 w-full scale-y-[10%] border border-gray-light-1/20" />
+        <div className="flex flex-col gap-2">
+          <DestinationDetailItem label="avg.distance" value={destinationData.distance} />
+          <DestinationDetailItem
+            label="est. travel time"
+            value={destinationData.travel}
+          />
+        </div>
+      </div>
     </>
   )
 }
