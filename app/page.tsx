@@ -6,15 +6,15 @@ import Link from "next/link"
 
 export default function Home() {
   return (
-    <section className="mt-8  pb-10 pl-6 sm:mt-20">
+    <section className="mt-8 pb-10 pl-6 sm:mt-20 lg:mx-auto lg:w-9/12">
       <AdaptiveImage
         className="withGradient absolute inset-0 -z-50 h-full w-full  bg-repeat"
         mobileImage={HeroMobile}
         tabletImage={HeroTablet}
         desktopImage={HeroDesktop}
       />
-      <div className="mx-auto flex max-w-xs flex-col items-center justify-between text-center  text-white sm:max-w-md ">
-        <div>
+      <div className="mx-auto flex max-w-xs flex-col items-center justify-between text-center text-white sm:max-w-md lg:w-full lg:max-w-none lg:flex-row lg:gap-64">
+        <div className="lg:text-start">
           <p className="text-sub-h2 uppercase text-gray-light-1 sm:text-[1.25rem]">
             So, you want to travel to
           </p>
@@ -27,10 +27,10 @@ export default function Home() {
             because we’ll give you a truly out of this world experience!
           </p>
         </div>
-        <div className="mt-10">
+        <div className="mt-10 lg:self-end">
           <Link href={"/destination"} prefetch>
             <button
-              className="hoverAnimated relative h-[9.375rem] w-[9.375rem] rounded-full bg-white py-1 font-bellefair text-[1.25rem] uppercase tracking-[0.07813rem] text-black  transition-all"
+              className="hoverAnimated relative h-[9.375rem] w-[9.375rem] rounded-full bg-white py-1 font-bellefair text-[1.25rem] uppercase tracking-[0.07813rem] text-black transition-all [text-wrap:balance] lg:h-[12rem]  lg:w-[12rem]"
               type="button"
             >
               Explore
