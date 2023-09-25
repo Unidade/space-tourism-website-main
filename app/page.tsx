@@ -6,7 +6,7 @@ import Link from "next/link"
 
 export default function Home() {
   return (
-    <section className="mt-8 pb-10 pl-6 sm:mt-20 lg:mx-auto lg:w-9/12">
+    <section className="mt-8 pb-10 pl-6 sm:mt-20 lg:m-0 lg:mx-auto lg:grid lg:min-h-[min(calc(100vh-120px),90vw)] lg:w-9/12 lg:place-content-center lg:p-0">
       <AdaptiveImage
         className="withGradient absolute inset-0 -z-50 h-full w-full  bg-repeat"
         mobileImage={HeroMobile}
