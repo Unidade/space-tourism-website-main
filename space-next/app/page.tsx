@@ -2,6 +2,7 @@ import { AdaptiveImage } from "@/components/AdaptativeImage"
 import HeroMobile from "@/public/assets/home/background-home-mobile.jpg"
 import HeroDesktop from "@/public/assets/home/background-home-desktop.jpg"
 import HeroTablet from "@/public/assets/home/background-home-tablet.jpg"
+import Link from "next/link"
 
 export default function Home() {
   return (
@@ -27,12 +28,14 @@ export default function Home() {
           </p>
         </div>
         <div className="mt-10">
-          <button
-            className="hoverAnimated relative h-[9.375rem] w-[9.375rem] rounded-full bg-white py-1 font-bellefair text-[1.25rem] uppercase tracking-[0.07813rem] text-black  transition-all"
-            type="button"
-          >
-            Explore
-          </button>
+          <Link href={"/destination"} prefetch>
+            <button
+              className="hoverAnimated relative h-[9.375rem] w-[9.375rem] rounded-full bg-white py-1 font-bellefair text-[1.25rem] uppercase tracking-[0.07813rem] text-black  transition-all"
+              type="button"
+            >
+              Explore
+            </button>
+          </Link>
         </div>
       </div>
     </section>
