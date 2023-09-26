@@ -20,6 +20,8 @@ const barlowCondensed = Barlow_Condensed({
 export const metadata: Metadata = {
   title: "CosmoCruises",
   description: "Take a trip to outer space.",
+  metadataBase: new URL("https://space-tourism-website-main-hazel.vercel.app/"),
+  themeColor: "#1b1b1b",
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
