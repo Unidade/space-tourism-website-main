@@ -25,7 +25,7 @@ export default function DestinationPage() {
           <NumberWithText number="01" title="pick your destination" />
         </div>
 
-        <div className="hidden lg:flex lg:gap-20">
+        <div className="hidden lg:mt-10 lg:flex lg:w-full lg:gap-40">
           <DestinationDetails data={dataJson.destinations} destination={destination} />
         </div>
       </div>

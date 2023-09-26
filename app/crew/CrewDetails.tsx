@@ -44,7 +44,7 @@ export default function CrewDetails({ data }: { data: Crew[] }) {
           alt={crewData.name}
           width={433}
           height={640}
-          quality={75}
+          quality={100}
           priority={true}
         />
       </div>
@@ -56,7 +56,7 @@ export default function CrewDetails({ data }: { data: Crew[] }) {
         <span className="mt-8  font-bellefair uppercase text-gray-light-1/50 lg:mt-0">
           {crewData.role}
         </span>
-        <h1 className="font-bellefair text-h4 uppercase">{crewData.name}</h1>
+        <h1 className="font-bellefair text-h4 uppercase lg:text-h3">{crewData.name}</h1>
         <p className="mt-8 leading-6 tracking-widest text-gray-light-1 [text-wrap:balance]  md:max-w-[90ch] lg:max-w-[55ch]">
           {crewData.bio}
         </p>

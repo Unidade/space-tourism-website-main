@@ -81,7 +81,7 @@ export default function DestinationDetails({
         </ul>
 
         <div className="max-w-md ">
-          <h1 className="mt-8 font-bellefair text-h3 uppercase">
+          <h1 className="mt-8 font-bellefair text-h3 uppercase lg:text-h2">
             {destinationData.name}
           </h1>
           <p className=" text-balance text-center leading-6 tracking-wider">
