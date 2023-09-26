@@ -1,4 +1,4 @@
-import { AdaptiveImage } from "@/components/AdaptativeImage"
+import { AdaptiveImage } from "@/components/AdaptiveImage"
 import CrewImageMobile from "@/public/assets/crew/background-crew-mobile.jpg"
 import CrewImageTablet from "@/public/assets/crew/background-crew-tablet.jpg"
 import CrewImageDesktop from "@/public/assets/crew/background-crew-desktop.jpg"

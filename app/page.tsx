@@ -1,4 +1,4 @@
-import { AdaptiveImage } from "@/components/AdaptativeImage"
+import { AdaptiveImage } from "@/components/AdaptiveImage"
 import HeroMobile from "@/public/assets/home/background-home-mobile.jpg"
 import HeroDesktop from "@/public/assets/home/background-home-desktop.jpg"
 import HeroTablet from "@/public/assets/home/background-home-tablet.jpg"

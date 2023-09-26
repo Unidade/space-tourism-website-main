@@ -1,4 +1,3 @@
-import Head from "next/head"
 import {
   ImageProps,
   StaticImageData,
@@ -27,12 +26,6 @@ export const AdaptiveImage = ({
   },
   ...props
 }: AdaptiveImageProps) => {
-  const commonPreload = {
-    rel: "preload",
-    as: "image",
-    imageSizes: sizes,
-  }
-
   const common = { alt, fill, sizes, priority, className, style, ...props }
 
   // grab the rest props to make this the default image
@@ -57,26 +50,6 @@ export const AdaptiveImage = ({
 
   return (
     <>
-      {/* <Head>
-        <link
-          {...commonPreload}
-          media={desktopMedia}
-          href={desktopImage.src}
-          imageSrcSet={desktopSrcSet}
-        />
-        <link
-          {...commonPreload}
-          media={tabletMedia}
-          href={tabletImage.src}
-          imageSrcSet={tabletSrcSet}
-        />
-        <link
-          {...commonPreload}
-          media={mobileMedia}
-          href={mobileImage.src}
-          imageSrcSet={mobileSrcSet}
-        />
-      </Head> */}
       <picture className={className}>
         <source media={desktopMedia} srcSet={desktopSrcSet} />
         <source media={tabletMedia} srcSet={tabletSrcSet} />

@@ -1,4 +1,4 @@
-import { AdaptiveImage } from "@/components/AdaptativeImage"
+import { AdaptiveImage } from "@/components/AdaptiveImage"
 import TechnologyMobile from "@/public/assets/technology/background-technology-mobile.jpg"
 import TechnologyTablet from "@/public/assets/technology/background-technology-tablet.jpg"
 import TechnologyDesktop from "@/public/assets/technology/background-technology-desktop.jpg"

@@ -1,4 +1,4 @@
-import { AdaptiveImage } from "@/components/AdaptativeImage"
+import { AdaptiveImage } from "@/components/AdaptiveImage"
 import DestinationTablet from "@/public/assets/destination/background-destination-tablet.jpg"
 import DestinationMobile from "@/public/assets/destination/background-destination-mobile.jpg"
 import DestinationDesktop from "@/public/assets/destination/background-destination-desktop.jpg"
