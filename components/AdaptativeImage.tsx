@@ -14,6 +14,7 @@ export type AdaptiveImageProps = {
 export const AdaptiveImage = ({
   priority = true,
   sizes = "100vw",
+  placeholder = "blur",
   fill = true,
   alt = "Hero Image",
   tabletImage,

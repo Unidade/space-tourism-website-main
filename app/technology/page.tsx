@@ -12,7 +12,8 @@ export default function TechnologyPage() {
   return (
     <section className="mt-8 pb-10 lg:mt-0">
       <AdaptiveImage
-        className="withGradient absolute inset-0 -z-50 h-full w-full"
+        quality={100}
+        className="withGradient -z-10"
         mobileImage={TechnologyMobile}
         tabletImage={TechnologyTablet}
         desktopImage={TechnologyDesktop}

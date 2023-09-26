@@ -15,7 +15,8 @@ export default function DestinationPage() {
   return (
     <section className="pb-14">
       <AdaptiveImage
-        className="withGradient absolute inset-0 -z-50 h-full w-full"
+        quality={100}
+        className="withGradient -z-10"
         mobileImage={DestinationMobile}
         tabletImage={DestinationTablet}
         desktopImage={DestinationDesktop}

@@ -12,7 +12,8 @@ export default function CrewPage() {
   return (
     <section className="pl-6 lg:pl-20">
       <AdaptiveImage
-        className="withGradient absolute inset-0 -z-50 h-full w-full"
+        quality={100}
+        className="withGradient -z-10"
         mobileImage={CrewImageMobile}
         tabletImage={CrewImageTablet}
         desktopImage={CrewImageDesktop}

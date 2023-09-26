@@ -6,14 +6,15 @@ import Link from "next/link"
 
 export default function Home() {
   return (
-    <section className="mt-8 pb-10 pl-6 sm:mt-20 lg:m-0 lg:mx-auto lg:grid lg:min-h-[min(calc(100vh-120px),90vw)] lg:w-9/12 lg:place-content-center lg:p-0">
+    <section className="mt-8 pb-10  pl-6 sm:mt-20 lg:m-0 lg:mx-auto lg:grid lg:min-h-[min(calc(100vh-120px),90vw)] lg:w-9/12 lg:place-content-center lg:p-0">
       <AdaptiveImage
-        className="withGradient absolute inset-0 -z-50 h-full w-full  bg-repeat"
+        quality={100}
+        className="withGradient -z-10"
         mobileImage={HeroMobile}
         tabletImage={HeroTablet}
         desktopImage={HeroDesktop}
       />
-      <div className="mx-auto flex max-w-xs flex-col items-center justify-between text-center text-white sm:max-w-md lg:w-full lg:max-w-none lg:flex-row lg:gap-64">
+      <div className="mx-auto  flex max-w-xs flex-col items-center justify-between text-center text-white sm:max-w-md lg:w-full lg:max-w-none lg:flex-row lg:gap-64">
         <div className="lg:text-start">
           <p className="text-sub-h2 uppercase text-gray-light-1 sm:text-[1.25rem]">
             So, you want to travel to
