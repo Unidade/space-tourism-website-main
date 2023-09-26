@@ -2,37 +2,51 @@
 
 import clsx from "clsx"
 import Image from "next/image"
-import { useState } from "react"
+import { useRef, useState } from "react"
 
 export default function TechnologyDetails({ data }: { data: Technology[] }) {
   const [selectedTechnologyIdx, setSelectedTechnologyIdx] = useState(0)
-
+  const [isLoading, setIsLoading] = useState(true)
   const technologyData = data[selectedTechnologyIdx]
 
   const handleCrewChange = (technologyIdx: number) => {
     setSelectedTechnologyIdx(technologyIdx)
+    setIsLoading(true)
+  }
+
+  const handleImageLoad = () => {
+    setIsLoading(false)
   }
 
   return (
     <>
-      <Image
-        className="mt-12 w-full lg:hidden"
-        src={technologyData.images.landscape}
-        alt={technologyData.name}
-        width={768}
-        height={310}
-        quality={75}
-        priority={true}
-      />
-      <Image
-        className="hidden lg:block"
-        src={technologyData.images.portrait}
-        width={515}
-        height={527}
-        quality={75}
-        priority={true}
-        alt={technologyData.name}
-      />
+      <div
+        className={clsx(
+          "duration-250 relative transition-opacity ease-out",
+          isLoading && "animate-pulse blur"
+        )}
+      >
+        <Image
+          className="mt-12 w-full lg:hidden"
+          src={technologyData.images.landscape}
+          alt={technologyData.name}
+          width={768}
+          height={310}
+          quality={75}
+          priority={true}
+          onLoad={handleImageLoad}
+        />
+        <Image
+          className="hidden lg:block"
+          src={technologyData.images.portrait}
+          width={515}
+          height={527}
+          quality={75}
+          priority={true}
+          alt={technologyData.name}
+          onLoad={handleImageLoad}
+        />
+      </div>
 
       <div className="flex w-full max-w-lg flex-col items-center px-4 pl-6 text-center lg:max-w-2xl lg:flex-row lg:items-start lg:justify-start lg:gap-8 lg:p-0">
         <ul className="mt-6 flex gap-4 uppercase tracking-widest lg:mt-0 lg:flex-col lg:gap-8">

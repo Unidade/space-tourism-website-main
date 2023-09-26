@@ -1,12 +1,13 @@
 "use client"
 
-import { useLocalStorage } from "@/utils/window-storage"
+import { motion, AnimatePresence } from "framer-motion"
 import clsx from "clsx"
 import Image from "next/image"
 import { useState } from "react"
 
 export default function CrewDetails({ data }: { data: Crew[] }) {
   const [selectedCrew, setSelectedCrew] = useState(data[0].name.toLowerCase())
+  const [isLoading, setIsLoading] = useState(true)
 
   const crewData = data.find((crewData) => crewData.name.toLowerCase() === selectedCrew)
 
@@ -15,7 +16,12 @@ export default function CrewDetails({ data }: { data: Crew[] }) {
   }
 
   const handleCrewChange = (crewName: string) => {
+    setIsLoading(true)
     setSelectedCrew(crewName)
+  }
+
+  const handleOnImageLoad = () => {
+    setIsLoading(false)
   }
 
   const renderCrewButtons = data.map((crew) => {
@@ -37,7 +43,14 @@ export default function CrewDetails({ data }: { data: Crew[] }) {
 
   return (
     <>
-      <div className="shrink-5 mt-12 text-center md:order-2 lg:order-none lg:row-span-2 lg:mt-0 lg:h-full lg:self-end lg:self-end">
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        key={crewData.name}
+        className={clsx(
+          "mt-12 shrink-0 text-center transition-opacity md:order-2 lg:order-none lg:row-span-2 lg:mt-0 lg:h-full lg:self-end"
+        )}
+      >
         <Image
           className="h-48 w-auto md:h-80 lg:h-full lg:max-h-[640px]"
           src={crewData.images.webp}
@@ -46,8 +59,10 @@ export default function CrewDetails({ data }: { data: Crew[] }) {
           height={640}
           quality={100}
           priority={true}
+          onLoad={handleOnImageLoad}
         />
-      </div>
+      </motion.div>
+
       <div className="flex flex-col items-center lg:items-start lg:text-start ">
         <div className="h-1 w-full -scale-y-[25%] bg-gray-light-1/25 md:hidden" />
         <ul className="mt-4 flex gap-4 uppercase tracking-widest md:order-1 lg:mt-8 lg:pb-8 ">
