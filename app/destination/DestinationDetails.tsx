@@ -75,7 +75,7 @@ export default function DestinationDetails({
           </motion.div>
         </div>
       </AnimatePresence>
-      <div className="self-start text-start">
+      <div className="flex flex-col items-center lg:block lg:self-start lg:text-start">
         <ul className="mt-8 flex gap-4 uppercase  tracking-widest">
           {DestinationButton}
         </ul>
