@@ -7,10 +7,12 @@ import dataJson from "@/public/data.json"
 
 import { NumberWithText } from "@/components/NumberWithText"
 import TechnologyDetails from "./TechnologyDetails"
+import Section from "@/components/shared/Section"
+import Container from "@/components/shared/Container"
 
 export default function TechnologyPage() {
   return (
-    <section className="mt-8 pb-10 lg:mt-0">
+    <Section>
       <AdaptiveImage
         quality={100}
         className="withGradient -z-10"
@@ -18,14 +20,14 @@ export default function TechnologyPage() {
         tabletImage={TechnologyTablet}
         desktopImage={TechnologyDesktop}
       />
-      <div className="flex flex-col items-center justify-center text-center lg:mx-auto lg:w-11/12 lg:items-start lg:pl-20">
-        <div className="pl-6 sm:self-start lg:self-auto lg:pl-0">
+      <Container>
+        <div className="pl-6 sm:self-start lg:pl-0">
           <NumberWithText number="03" title="space launch 101" />
         </div>
         <div className="flex w-full flex-col items-center 2xl:container lg:flex-row-reverse lg:justify-between lg:gap-6">
           <TechnologyDetails data={dataJson.technology} />
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   )
 }

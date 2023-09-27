@@ -8,12 +8,14 @@ import dataJson from "@/public/data.json"
 import DestinationDetails from "./DestinationDetails"
 import { NumberWithText } from "@/components/NumberWithText"
 import { motion } from "framer-motion"
+import Section from "@/components/shared/Section"
+import Container from "@/components/shared/Container"
 
 export default function DestinationPage() {
   const destination = cookies().get("destination")?.value || "moon"
 
   return (
-    <section className="pb-14">
+    <Section>
       <AdaptiveImage
         quality={100}
         className="withGradient -z-10"
@@ -21,15 +23,15 @@ export default function DestinationPage() {
         tabletImage={DestinationTablet}
         desktopImage={DestinationDesktop}
       />
-      <div className="flex flex-col items-center px-10 lg:mx-auto lg:w-11/12 lg:pl-20">
-        <div className="lg:self-start">
+      <Container>
+        <div className="pl-6 sm:self-start lg:pl-0">
           <NumberWithText number="01" title="pick your destination" />
         </div>
 
         <div className="flex flex-col items-center text-center lg:mt-10 lg:w-full lg:flex-row lg:gap-40">
           <DestinationDetails data={dataJson.destinations} destination={destination} />
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   )
 }

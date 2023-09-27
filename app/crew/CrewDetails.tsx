@@ -42,17 +42,17 @@ export default function CrewDetails({ data }: { data: Crew[] }) {
   })
 
   return (
-    <>
+    <div className="flex w-full flex-col items-center md:flex-col-reverse lg:min-h-[80vh] lg:flex-row-reverse lg:items-end lg:gap-20">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         key={crewData.name}
         className={clsx(
-          "mt-12 shrink-0 text-center transition-opacity md:order-2 lg:order-none lg:row-span-2 lg:mt-0 lg:h-full lg:self-end"
+          "mt-12 flex flex-1 text-center transition-opacity lg:mt-0 lg:h-full"
         )}
       >
         <Image
-          className="h-48 w-auto md:h-80 lg:h-full lg:max-h-[640px]"
+          className="h-48 w-auto flex-1 md:h-80 lg:max-h-[640px] lg:min-h-[420px]"
           src={crewData.images.webp}
           alt={crewData.name}
           width={433}
@@ -63,7 +63,7 @@ export default function CrewDetails({ data }: { data: Crew[] }) {
         />
       </motion.div>
 
-      <div className="flex flex-col items-center lg:items-start lg:text-start ">
+      <div className="flex max-w-md flex-col items-center justify-center px-4 text-center sm:px-0 lg:max-w-none lg:items-start lg:text-start ">
         <div className="h-1 w-full -scale-y-[25%] bg-gray-light-1/25 md:hidden" />
         <ul className="mt-4 flex gap-4 uppercase tracking-widest md:order-1 lg:mt-8 lg:pb-8 ">
           {renderCrewButtons}
@@ -72,11 +72,11 @@ export default function CrewDetails({ data }: { data: Crew[] }) {
           {crewData.role}
         </span>
         <h1 className="font-bellefair text-h4 uppercase lg:text-h3">{crewData.name}</h1>
-        <p className="mt-8 leading-6 tracking-widest text-gray-light-1 [text-wrap:balance]  md:max-w-[90ch] lg:max-w-[55ch]">
+        <p className="mt-8 leading-6 tracking-widest text-gray-light-1 [text-wrap:balance] md:max-w-[90ch]  lg:max-w-[55ch] ">
           {crewData.bio}
         </p>
       </div>
-    </>
+    </div>
   )
 }
 

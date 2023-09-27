@@ -22,7 +22,7 @@ export default function TechnologyDetails({ data }: { data: Technology[] }) {
     <>
       <div
         className={clsx(
-          "duration-250 relative transition-opacity ease-out",
+          "duration-250 relative w-full transition-opacity ease-out",
           isLoading && "animate-pulse blur"
         )}
       >

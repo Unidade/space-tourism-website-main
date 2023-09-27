@@ -7,10 +7,13 @@ import dataJson from "@/public/data.json"
 
 import { NumberWithText } from "@/components/NumberWithText"
 import CrewDetails from "./CrewDetails"
+import Section from "@/components/shared/Section"
+import Container from "@/components/shared/Container"
 
 export default function CrewPage() {
   return (
-    <section className="pl-6 lg:pl-20">
+    // remove padding bottom
+    <Section classValues={["md:pb-0"]}>
       <AdaptiveImage
         quality={100}
         className="withGradient -z-10"
@@ -18,13 +21,12 @@ export default function CrewPage() {
         tabletImage={CrewImageTablet}
         desktopImage={CrewImageDesktop}
       />
-      <div className="flex flex-col items-center justify-center text-center lg:mx-auto lg:grid lg:min-h-[40rem] lg:w-11/12  lg:grid-cols-2 lg:items-start ">
-        <div className="md:self-start">
+      <Container classValues={["h-full"]}>
+        <div className="pl-6 sm:self-start lg:pl-0">
           <NumberWithText number="02" title="meet your crew" />
         </div>
-
         <CrewDetails data={dataJson.crew} />
-      </div>
-    </section>
+      </Container>
+    </Section>
   )
 }
